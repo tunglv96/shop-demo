@@ -1,26 +1,83 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './component/header/Navbar';
+import Breadcrumbs from './component/header/Breadcrumbs';
+import Header_shop from './component/header/Header-shop';
+import Dropdown_content from './component/product/Dropdown-content';
+import Slowing from './component/product/Showing';
+import Product from './component/product/Product';
+import img1 from './images/img1.jpg';
+import Pagination_pro from './component/product/Pagination-pro';
+import { Container, Row, Col } from 'reactstrap';
+
+
 
 class App extends Component {
   render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <React.Fragment>
+        <Container>
+          <header>
+            <Header />
+            <Breadcrumbs />
+            <Header_shop />
+          </header>
+          <section>
+            <Row>
+              <Col xs="6">
+                <Slowing />
+              </Col>
+              <Col xs="6">
+                <Dropdown_content />
+              </Col>
+            </Row>
+          </section>
+          <section>
+            <Row>
+              <Product
+                name= "Flying Ninja"
+                price= "$12.00"
+                images = {img1}
+              />
+              <Product
+                name= "Flying Ninja"
+                price= "$16.00"
+                images = {img1}
+              />
+              <Product
+                name= "Flying Ninja"
+                price= "$12.00"
+                images = {img1}
+              />
+              <Product
+                name= "Flying Ninja"
+                price= "$17.00"
+                images = {img1}
+              />
+              <Product
+                name= "Flying Ninja"
+                price= "$19.00"
+                images = {img1}
+              />
+              <Product
+                name= "Flying Ninja"
+                price= "$12.00"
+                images = {img1}
+              />
+              <Product
+                name= "Flying Ninja"
+                price= "$11.00"
+                images = {img1}
+              />
+              <Product
+                name= "Flying Ninja"
+                price= "$15.00"
+                images = {img1}
+              />
+            </Row>
+          </section>
+          <Pagination_pro />
+        </Container>
+      </React.Fragment>
     );
   }
 }
